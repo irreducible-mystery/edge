@@ -280,6 +280,7 @@ def main(argv):
             ok = diff1 < 1e-9
             print(f"check vs rge_1loop.py at one loop: max |diff| = {diff1:.2e}", "ok" if ok else "FAILED"); rc |= (not ok)
         print("gate lambda(M_Pl) within", GATE_TOL, "of", GATE_TARGET, ":", "PASS" if gate_pass else "FAIL", f"(got {central_2013['lambda_MPl']:.4f})")
+        rc |= (not gate_pass)   # audit F1 (2026-10-31): a failed gate must fail --check
         return rc
 
     json.dump(results, open(outfile, "w"), indent=1)
