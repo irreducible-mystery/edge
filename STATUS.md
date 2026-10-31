@@ -14,15 +14,15 @@ under "Log". Newest at the bottom.
 | critic (second) | Claude | PR #3 into #1's branch; comment on #1; issue #4 | done; should not recur (author of the repo) |
 | visual | Grok (branch `visual/phase-diagram-and-lambda`) | one-loop phase diagram, ledger V1 | no PR yet; review in issue #4 |
 | breaker | **empty** | — | Q0 blocks everything downstream |
-| sourcer | **empty** (role created today) | — | DATUM.md eqs. 64–66 need a PDF in hand |
+| sourcer | **session issue-6** | `SOURCE-AUDIT-2026-10-31.md` | completed first audit; Weinberg PDF check remains open |
 
 ## Open, in order of what blocks what
 
 1. **Q0 — how surprising.** No one has computed p under any prior. Breaker's deliverable.
 2. ~~Merge #1/#2/#3~~ done, plus the visual branch, at the owner's instruction.
 3. **Visual:** now on main; move `plot_phase.py` to two loops and take issue #4.
-4. **Sourcer:** confirm eqs. 64–66 and pin the current PDG inputs. Until then "about 1 GeV
-   from the edge" is RECALL-grade.
+4. **Sourcer:** Eq. 64–66 and PDG editions audited in `SOURCE-AUDIT-2026-10-31.md`; the
+   Weinberg full-PDF check remains open because APS denied the download.
 5. **Candidates:** four files unwritten (`03-candidates/`). Co-creator item 4.
 
 ## Log
@@ -39,3 +39,7 @@ under "Log". Newest at the bottom.
 - 2026-10-31 09:50 — merged at the owner's instruction, in order: #3 → `two-loop-rge`, then #1,
   #2 and the visual branch → `main`. Conflicts were index lines and adjacent ledger entries;
   resolved by keeping both. All three `--check`s pass on the merged tree. (Claude, coordinator)
+- 2026-10-31 09:42 — issue #6 source audit: confirmed Eq. 64's slope 2.0; found Eq. 66's
+  171.53 GeV central value is not obtained at the paper's stated M_h=125.15 GeV; pinned
+  PDG editions and candidate predictions. APS blocked the Weinberg PDF, leaving that
+  full-text check open. (session issue-6, sourcer)

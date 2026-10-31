@@ -25,17 +25,25 @@ Their three-loop result at central 2013 inputs (eq. 61e):
 ```
 λ(M_Pl) = −0.0143 − 0.0066 (M_t − 173.34) + 0.0018 (α_s − 0.1184)/0.0007 + 0.0029 (M_h − 125.15)
 ```
-with λ crossing zero near 10¹⁰ GeV and β_λ vanishing near 10¹⁷–10¹⁸ GeV. Absolute
-stability up to M_Pl requires M_h > 129.6 ± 1.5 GeV, equivalently M_t < 171.53 ± 0.42 GeV
-(eqs. 65–66). With 2013 inputs they quote stability excluded at 2.8σ.
+with λ crossing zero near 10¹⁰ GeV and β_λ vanishing near 10¹⁷–10¹⁸ GeV. Eq. 64 gives
+the stability fit; Eq. 65 reports M_h > 129.6 ± 1.5 GeV, and Eq. 66 prints
+M_t < 171.53 ± 0.42 GeV. **They are not equivalent at the same stated inputs.** The
+paper lists M_h = 125.15 ± 0.24 GeV and α_s = 0.1184; substituting those central values
+into Eq. 64 gives M_t < 171.115 GeV, not 171.53 GeV. Eq. 66 does not state which
+central M_h it used. The Eq. 64 fit would imply M_h = 125.98 GeV at M_t = 171.53 GeV
+and central α_s. Do not compare the Eq. 66 number directly with a run at M_h = 125.15.
+See the [source audit](../SOURCE-AUDIT-2026-10-31.md).
 
-Inputs since 2013 (RECALL, PDG-2024-era; a session should pin these to the current PDG
-or the latest world averages and record the source): M_t ≈ 172.57 ± 0.29 GeV (the world
-average has moved *down* about 0.8 GeV since 2013), M_h = 125.20 ± 0.11 GeV,
-α_s(M_Z) = 0.1180 ± 0.0009. With these, the measured top is about 1.0 GeV above the
-three-loop stability edge, roughly 2σ combining the measurement and the edge's error.
-**The edge got closer as the measurements improved.** That is worth noticing and is not
-yet explained by anything in this repo.
+The PDG 2024 inputs used by the checked-in RGE outputs are M_t = 172.57 ± 0.29 GeV,
+M_h = 125.20 ± 0.11 GeV, and α_s(M_Z) = 0.1180 ± 0.0009; these are now sourced to the
+2024 PDG edition. The latest PDG 2026 values are M_t = 172.52 ± 0.33 GeV (direct/
+reconstructed mass), M_h = 125.10 ± 0.14 GeV, and α_s(M_Z) = 0.1179 ± 0.0009. The
+existing outputs below remain 2024-input results, not current-input recalculations.
+Using Eq. 64 with the PDG 2026 Higgs and strong-coupling central values gives a
+same-input top-mass edge of 170.91 GeV, about 1.61 GeV below the PDG direct/
+reconstructed top-mass central value. Because the measured direct mass is not itself a
+direct pole-mass determination, that difference is a comparison with an explicit
+mass-definition caveat, not a new significance estimate.
 
 ## What this repo has reproduced so far (DERIVED, one loop)
 
@@ -49,21 +57,22 @@ beta functions and RK4, from the inputs above. Output of the 2026-10-31 run
 | λ minimum | −0.0341 at 10^17.6 | −0.0297 at 10^17.8 | (not quoted; small negative) |
 | λ(M_Pl) | −0.0337 | −0.0294 | −0.0143 |
 | β_λ(M_Pl) | +0.00022 | +0.00018 | ≈ 0 near 10^17–10^18 |
-| M_t at the stability edge | 168.1 GeV | 168.1 GeV | 171.53 ± 0.42 GeV |
+| M_t at the stability edge | 168.1 GeV | 168.1 GeV | 171.12 GeV from Eq. 64 at M_h 125.15, α_s 0.1184; Eq. 66 prints 171.53 ± 0.42 GeV at unspecified central M_h |
 
 Monte Carlo over M_t, M_h, α_s at 2024 central values (4000 draws): λ(M_Pl) = −0.029 ± 0.003,
 and λ goes negative below M_Pl in 100% of draws at one loop.
 
 **Read the table honestly.** One loop gets the *shape* right (λ falls through zero, bottoms
 out just below the Planck scale with nearly zero slope, and stays small) and the *numbers*
-wrong by a factor of two in λ(M_Pl) and by 3.4 GeV in the M_t edge. One loop makes the
-coincidence look *weaker* than it is: at one loop the top would need to be 4.5 GeV lighter
-for stability, at three loops only 1 GeV. The two- and three-loop terms matter, and the
+wrong by a factor of two in λ(M_Pl) and by about 3.0 GeV in the M_t edge compared with the
+same-input Eq. 64 fit. One loop makes the coincidence look *weaker* than it is: at one loop
+the 2024 measured top would need to be about 4.5 GeV lighter for stability, versus about
+1.6 GeV using Eq. 64 at matched PDG 2024 M_h and α_s. The two- and three-loop terms matter, and the
 regression target for whoever implements them is eq. 61e above: **−0.0143 at
 (173.34, 125.15, 0.1184)**. Until a session hits that number, every quantitative claim in
 this repo about "how close to the edge" rests on the literature, not on our own run.
 
-## Two loops (DERIVED, added 2026-10-31; the paragraph above is left as written)
+## Two loops (DERIVED, added 2026-10-31; one-loop results retained for comparison)
 
 `rge_2loop.py` adds the two-loop terms, transcribed from appendix B of arXiv:1307.3536
 (eqs. 96–99, 101–103) off the rendered PDF pages, with the bottom and tau Yukawas carried
@@ -81,7 +90,7 @@ reproduces `rge_1loop.py` to 10⁻¹⁶. Output of the 2026-10-31 run (`results_
 | ∂λ(M_Pl)/∂M_h per GeV | +0.0025 | **+0.0028** | +0.0029 | — |
 | ∂λ(M_Pl)/∂α_s per 0.0007 | +0.0019 | **+0.0019** | +0.0018 | — |
 | g₁, g₂, g₃, y_t at M_Pl | — | **0.6153, 0.5054, 0.4873, 0.3832** | 0.6154, 0.5055, 0.4873, 0.3825 | — |
-| M_t at the stability edge | 168.1 GeV | **170.96 GeV** (M_h 125.15, α_s 0.1184) | 171.53 ± 0.42 GeV | **170.83 GeV** (M_h 125.20, α_s 0.1180) |
+| M_t at the stability edge | 168.1 GeV | **170.96 GeV** (M_h 125.15, α_s 0.1184) | **171.12 GeV** from Eq. 64 at M_h 125.15, α_s 0.1184; Eq. 66 separately prints 171.53 ± 0.42 GeV without stating its central M_h | **170.83 GeV** (M_h 125.20, α_s 0.1180) |
 | M_h at the stability edge | — | **130.07 GeV** (M_t 173.34) | 129.6 ± 1.5 GeV | — |
 
 Monte Carlo over M_t, M_h, α_s at 2024 central values (4000 draws, same seed as the one-loop
@@ -99,8 +108,10 @@ within one unit of it. The light Yukawas move λ(M_Pl) by −6 × 10⁻⁶; they
    and is in the direction expected (three-loop terms in β_λ are known to be small and to
    push λ(M_Pl) up slightly; INFERENCE from the sign of the miss, not checked against the
    three-loop coefficients, which are in eq. 99 and could be added by a later session).
-2. The M_t edge comes out 0.57 GeV below the literature's 171.53, outside its ±0.42. Part of
-   that is the missing loop (the slope −0.0065/GeV turns a λ(M_Pl) shift of 0.0008 into
+2. The M_t edge comes out 0.16 GeV below the Eq. 64 fit's 171.115 at the same M_h and α_s.
+   The former comparison against Eq. 66's 171.53 ± 0.42 used a value whose central M_h is
+   unstated and is not equivalent to this input point. Part of the remaining difference is
+   the missing loop (the slope −0.0065/GeV turns a λ(M_Pl) shift of 0.0008 into
    ≈ 0.12 GeV). The rest is a **difference in definition**: this script calls the vacuum
    unstable if the MS-bar running λ(μ) is negative anywhere below M_Pl, whereas eqs. 64–66
    use the effective potential λ_eff(h) of their eq. 63 and appendix C, which differs from
@@ -111,9 +122,11 @@ within one unit of it. The light Yukawas move λ(M_Pl) by −6 × 10⁻⁶; they
    for the edge and this run for everything else.
 
 With the 2024-era inputs, the measured top (172.57) sits 1.7 GeV above this run's
-running-coupling edge (170.83) and about 1.0 GeV above the literature's potential edge. Either
-way, two loops confirms what one loop understated: the edge is closer than the one-loop table
-makes it look, by about 3 GeV in M_t.
+running-coupling edge (170.83) and about 1.6 GeV above the Eq. 64 literature fit evaluated
+at the same M_h and α_s (170.997 GeV). The previously quoted 1.0 GeV literature difference
+used Eq. 66's 171.53 GeV value at unspecified M_h and is corrected above. Two loops still
+confirms what one loop understated: the running-coupling edge is closer than the one-loop
+table makes it look, by about 3 GeV in M_t.
 
 ## Three edges, not one (RECALL of the literature's framing; STIPULATED as this repo's framing)
 

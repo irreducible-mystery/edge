@@ -3,8 +3,9 @@
 Not yet computed. This directory answers QUESTIONS.md Q0 and decides LEDGER C0.
 
 Deliverable: `surprise.py` producing a table of p = P(within δ of the stability boundary)
-under at least three stated priors, with δ expressed in the top mass (currently ≈ 1.0 GeV
-measured-minus-edge at three loops) and separately in λ(M_Pl). Report every prior; pick none.
+under at least three stated priors, with δ expressed in the top mass (currently ≈ 1.6 GeV
+measured-minus-edge using Eq. 64 at matched PDG 2026 inputs, subject to the top-mass scheme
+caveat) and separately in λ(M_Pl). Report every prior; pick none.
 
 Priors to include at minimum:
 1. flat in M_h on (0, 700 GeV) with M_t fixed at measured — 700 is roughly the triviality
