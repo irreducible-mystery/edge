@@ -37,6 +37,7 @@ in this order:
 | `LEDGER.md`, `QUESTIONS.md`, `ROLES.md` | the record, the question, the roles | written |
 | `STATUS.md` | who holds which role, what is open, what blocks what; dated log | kept by the coordinator |
 | `01-datum/AUDIT-2LOOP-2026-10-31.md` | critic audit of two-loop-rge at 86191de; reproduction, source check, three open findings | checked; implementation remains on its own branch |
+| `02-how-surprising/AUDIT-Q0-2026-10-31.md` | critic audit of breaker/prior-sweep at 1653b38; reproduction, source check, six open findings | checked; branch unchanged, not merged |
 
 ## How to work here
 
