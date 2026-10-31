@@ -57,6 +57,25 @@ choice. The alternative (it is a coincidence, or an anthropic selection) is a li
 in `03-candidates/` and is not excluded by taking this floor. If the breaker shows the
 coincidence is unremarkable under a defensible prior, the floor comes out.
 
+### S1 — correction, 2026-10-31 (DRAFT by the coordinator; the steward accepts, amends, or strikes this)
+The breaker (PR #7) computed p = P(landing this close to the stability boundary) under four
+stated priors, and the critic (PR #10) checked the computation and the choices. Result:
+flat in M_h on (0, 700): 0.009; flat in λ(M_t) on (0, 4π): 0.001; flat in λ(M_Pl) on
+(−0.2, 0.2): 0.046; flat in λ(M_Pl) on (−0.05, 0.05): 0.18 two-sided, 0.091 one-sided. The
+fourth prior is the only one that clears p > 0.1, it does so only two-sided, and its support
+is chosen with the datum visible: it assumes the Planck-scale quartic is small, which is most
+of what it is testing. (All DERIVED; priors STIPULATED by their authors; the reading INFERENCE.)
+
+Standing of S1 after this: **the floor is no longer compulsory, and it is not withdrawn.**
+Under every prior that does not presuppose a small UV quartic, the proximity is improbable
+(p < 0.05), so "treat it as a datum to be explained" remains a defensible choice. Under a
+prior that does presuppose it, there is nothing left to explain, because the presupposition
+did the explaining. So S1 is now a stipulation of the honest kind: chosen, named, and known
+to depend on rejecting one specific prior. Any candidate in `03-candidates/` that *predicts*
+a small UV quartic from something else (C2 does) converts that prior from an assumption into
+a consequence, which is where the question now lives. C0 (coincidence) stays alive. The
+original S1 text above stands as written.
+
 ### P1 — the "edge" is prior-dependent and the prior has not been written down (PROVISIONAL)
 "Near-critical" means close relative to some range. Nobody in this repo has yet stated the
 range. `02-how-surprising/` exists to do that explicitly, with more than one prior, so the

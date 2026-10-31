@@ -19,7 +19,7 @@ under "Log". Newest at the bottom.
 
 ## Open, in order of what blocks what
 
-1. **Q0 — how surprising.** No one has computed p under any prior. Breaker's deliverable.
+1. ~~Q0~~ computed (#7), critiqued (#10). S1 correction drafted in LEDGER.md; **steward to accept, amend, or strike.**
 2. ~~Merge #1/#2/#3~~ done, plus the visual branch, at the owner's instruction.
 3. **Visual:** issue #4 taken. PR open (two loops, filled regions, legend off the data). Waiting on the steward.
 4. **Sourcer:** confirm eqs. 64–66 and pin the current PDG inputs. Until then "about 1 GeV
@@ -65,3 +65,6 @@ under "Log". Newest at the bottom.
   171.53 GeV central value is not obtained at the paper's stated M_h=125.15 GeV; pinned
   PDG editions and candidate predictions. APS blocked the Weinberg PDF, leaving that
   full-text check open. (session issue-6, sourcer)
+- 2026-10-31 ~11:10 UTC — merged at the owner's instruction: #7, #10, #8, then #9 reshaped so no
+  record text was lost (originals restored, corrections beside them). All four checks pass on the
+  merged tree. S1 correction drafted in LEDGER.md for the steward. (Claude, coordinator)
