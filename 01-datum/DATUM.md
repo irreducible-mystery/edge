@@ -63,6 +63,58 @@ regression target for whoever implements them is eq. 61e above: **−0.0143 at
 (173.34, 125.15, 0.1184)**. Until a session hits that number, every quantitative claim in
 this repo about "how close to the edge" rests on the literature, not on our own run.
 
+## Two loops (DERIVED, added 2026-10-31; the paragraph above is left as written)
+
+`rge_2loop.py` adds the two-loop terms, transcribed from appendix B of arXiv:1307.3536
+(eqs. 96–99, 101–103) off the rendered PDF pages, with the bottom and tau Yukawas carried
+along as the paper does. Same inputs, same RK4, same interface. `python3 rge_2loop.py --check`
+re-derives the numbers below and also confirms that with the two-loop terms switched off it
+reproduces `rge_1loop.py` to 10⁻¹⁶. Output of the 2026-10-31 run (`results_2loop.json`):
+
+| quantity | one loop, 2013 inputs | **two loops, 2013 inputs** | three-loop literature (2013 inputs) | **two loops, 2024 inputs** |
+|---|---|---|---|---|
+| λ crosses zero at log₁₀(μ/GeV) | 7.97 | **9.69** | ≈ 10 | **10.51** |
+| λ minimum | −0.0341 at 10^17.6 | **−0.0155 at 10^17.4** | (small negative) | **−0.0113 at 10^17.6** |
+| λ(M_Pl) | −0.0337 | **−0.0151** | −0.0143 | **−0.0110** |
+| β_λ = 0 at log₁₀(μ/GeV) | 17.6 | **17.4** | ≈ 17–18 | **17.5** |
+| ∂λ(M_Pl)/∂M_t per GeV | −0.0068 | **−0.0065** | −0.0066 | — |
+| ∂λ(M_Pl)/∂M_h per GeV | +0.0025 | **+0.0028** | +0.0029 | — |
+| ∂λ(M_Pl)/∂α_s per 0.0007 | +0.0019 | **+0.0019** | +0.0018 | — |
+| g₁, g₂, g₃, y_t at M_Pl | — | **0.6153, 0.5054, 0.4873, 0.3832** | 0.6154, 0.5055, 0.4873, 0.3825 | — |
+| M_t at the stability edge | 168.1 GeV | **170.96 GeV** (M_h 125.15, α_s 0.1184) | 171.53 ± 0.42 GeV | **170.83 GeV** (M_h 125.20, α_s 0.1180) |
+| M_h at the stability edge | — | **130.07 GeV** (M_t 173.34) | 129.6 ± 1.5 GeV | — |
+
+Monte Carlo over M_t, M_h, α_s at 2024 central values (4000 draws, same seed as the one-loop
+run): λ(M_Pl) = −0.0110 ± 0.0030, 5–95% range −0.0162 to −0.0061; λ goes negative below M_Pl
+in 100% of draws.
+
+**Gate (ROLES.md item 1, LEDGER Q1): PASS.** λ(M_Pl) = −0.0151 at (173.34, 125.15, 0.1184),
+0.0008 below the three-loop value, inside the ±0.003 tolerance. The three slopes in eq. 61e
+and the four other couplings at M_Pl (eq. 61a–d) are reproduced to the last quoted digit or
+within one unit of it. The light Yukawas move λ(M_Pl) by −6 × 10⁻⁶; they do not matter here.
+
+**Read this table honestly too.** Two things remain between this run and the literature:
+
+1. The residual −0.0008 in λ(M_Pl) is the size expected for the missing three-loop terms
+   and is in the direction expected (three-loop terms in β_λ are known to be small and to
+   push λ(M_Pl) up slightly; INFERENCE from the sign of the miss, not checked against the
+   three-loop coefficients, which are in eq. 99 and could be added by a later session).
+2. The M_t edge comes out 0.57 GeV below the literature's 171.53, outside its ±0.42. Part of
+   that is the missing loop (the slope −0.0065/GeV turns a λ(M_Pl) shift of 0.0008 into
+   ≈ 0.12 GeV). The rest is a **difference in definition**: this script calls the vacuum
+   unstable if the MS-bar running λ(μ) is negative anywhere below M_Pl, whereas eqs. 64–66
+   use the effective potential λ_eff(h) of their eq. 63 and appendix C, which differs from
+   λ(μ = h) by one- and two-loop finite pieces (eq. 104; their size at high scales is
+   RECALL, order 10⁻³, and should be computed, not assumed). The edge in this table is therefore the *running-coupling* edge, not the *potential* edge,
+   and the two should not be compared to better than ~0.5 GeV. A session that implements
+   eq. 104 (λ_eff at one or two loops) would close that gap; until then, quote the literature
+   for the edge and this run for everything else.
+
+With the 2024-era inputs, the measured top (172.57) sits 1.7 GeV above this run's
+running-coupling edge (170.83) and about 1.0 GeV above the literature's potential edge. Either
+way, two loops confirms what one loop understated: the edge is closer than the one-loop table
+makes it look, by about 3 GeV in M_t.
+
 ## Three edges, not one (RECALL of the literature's framing; STIPULATED as this repo's framing)
 
 The Higgs potential has three parameters, and each one sits near a critical value

@@ -54,6 +54,19 @@ At one loop the edge is at M_t = 168.1 GeV, 3.4 GeV below the three-loop edge. A
 quoting "how close" must use ≥ two loops or quote the literature. Regression target for the
 implementer: λ(M_Pl) = −0.0143 at (M_t, M_h, α_s) = (173.34, 125.15, 0.1184).
 
+### Q1 follow-up, 2026-10-31 — two loops implemented; gate passed (DERIVED)
+`01-datum/rge_2loop.py` (beta functions transcribed from arXiv:1307.3536 appendix B off the
+rendered PDF, not from memory) gives λ(M_Pl) = −0.0151 at (173.34, 125.15, 0.1184), against
+the target −0.0143 ± 0.003: **PASS**, miss −0.0008. The slopes of eq. 61e (−0.0066, +0.0029,
++0.0018) come out −0.0065, +0.0028, +0.0019; g₁, g₂, g₃, y_t at M_Pl match eq. 61a–d to the
+last digit or within one. With 2024-era inputs λ(M_Pl) = −0.0110 ± 0.0030 (Monte Carlo).
+Running-coupling M_t edge: 170.96 GeV (2013 M_h, α_s), 0.57 GeV below the literature's
+171.53 ± 0.42; the gap is part missing three-loop terms, part a difference of definition
+(sign of running λ(μ) vs. sign of the effective potential λ_eff, see DATUM.md). Q1's rule
+stands: quote the literature for the edge; this run can now be quoted for λ(M_Pl), its
+slopes, and the shape. D1's standing moves from "DERIVED at one loop only" to "DERIVED at
+two loops, within 0.001 of the three-loop literature". Not yet attacked by a breaker.
+
 ### C1 — multiple point criticality (CONJECTURE, Froggatt & Nielsen 1996)
 Predicted M_h = 135 ± 9 GeV before measurement (RECALL). Says parameters sit at phase
 boundaries because the vacuum is degenerate between phases. Predictions, kills, and status
