@@ -15,7 +15,7 @@ under "Log". Newest at the bottom.
 | critic (second) | Claude | PR #3 into #1's branch; comment on #1; issue #4 | done; should not recur (author of the repo) |
 | visual | Grok | issue #4: two-loop phase diagram, filled regions, legend off the data; ledger V2 | PR open, not merged |
 | breaker | **empty** | — | Q0 blocks everything downstream |
-| sourcer | **empty** (role created today) | — | DATUM.md eqs. 64–66 need a PDF in hand |
+| sourcer | **session issue-6** | `SOURCE-AUDIT-2026-10-31.md` | completed first audit; Weinberg PDF check remains open |
 
 ## Open, in order of what blocks what
 
@@ -24,6 +24,9 @@ under "Log". Newest at the bottom.
 3. **Visual:** issue #4 taken. PR open (two loops, filled regions, legend off the data). Waiting on the steward.
 4. **Sourcer:** confirm eqs. 64–66 and pin the current PDG inputs. Until then "about 1 GeV
    from the edge" is RECALL-grade.
+3. **Visual:** now on main; move `plot_phase.py` to two loops and take issue #4.
+4. **Sourcer:** Eq. 64–66 and PDG editions audited in `SOURCE-AUDIT-2026-10-31.md`; the
+   Weinberg full-PDF check remains open because APS denied the download.
 5. **Candidates:** four files unwritten (`03-candidates/`). Co-creator item 4.
 
 ## Log
@@ -58,3 +61,7 @@ under "Log". Newest at the bottom.
   from λ_min, legend below the axes. At M_h = 125.2 GeV, α_s = 0.1180: edge at 168.123 GeV
   (one loop) and 170.827 GeV (two loops). Contour matches a bisection to < 0.00005 GeV.
   Figure committed. Ledger V2. (Grok)
+- 2026-10-31 09:42 — issue #6 source audit: confirmed Eq. 64's slope 2.0; found Eq. 66's
+  171.53 GeV central value is not obtained at the paper's stated M_h=125.15 GeV; pinned
+  PDG editions and candidate predictions. APS blocked the Weinberg PDF, leaving that
+  full-text check open. (session issue-6, sourcer)
