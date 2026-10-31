@@ -1,0 +1,303 @@
+{
+  "role": "breaker",
+  "session": "prior-sweep",
+  "base_commit": "83e737c60e97563fb63078794e06cb662f8bea2b",
+  "source": "arXiv:1307.3536v4, equations 55, 61e, 64",
+  "input_status": "repo 2024-era RECALL inputs; not asserted current",
+  "inputs": {
+    "mh_GeV": 125.2,
+    "mt_GeV": 172.57,
+    "alpha_s": 0.118
+  },
+  "conditioning": "Mt, alpha_s fixed; Mh/local quartic coordinate scans",
+  "event": "abs(Mh - critical_higgs(Mt,alpha_s))/2 <= observed delta_top",
+  "method": "analytic interval intersection; local linear boundary model",
+  "geometry": {
+    "critical_mh_GeV": 128.34571428571428,
+    "critical_mt_at_observed_mh_GeV": 170.99714285714285,
+    "delta_top_GeV": 1.5728571428571385,
+    "lambda_UV_observed": -0.010101571428571399,
+    "lambda_UV_at_potential_boundary_on_fixed_mt_slice": -0.0009789999999999972,
+    "delta_lambda_UV_to_boundary_on_fixed_mt_slice": 0.009122571428571402,
+    "delta_lambda_UV_to_zero": 0.010101571428571399,
+    "boundary_bands": {
+      "mh_GeV": [
+        125.2,
+        131.49142857142857
+      ],
+      "lambda_EW": [
+        0.1261738,
+        0.13913414285714285
+      ],
+      "lambda_UV": [
+        -0.010101571428571399,
+        0.008143571428571446
+      ]
+    }
+  },
+  "priors": [
+    {
+      "prior": "flat_Mh_0_700",
+      "coordinate": "mh_GeV",
+      "support": [
+        0.0,
+        700.0
+      ],
+      "p_boundary": 0.008987755102040812,
+      "p_lambda_UV_near_zero": 0.009952287121745229
+    },
+    {
+      "prior": "flat_lambda_EW_0_4pi",
+      "coordinate": "lambda_EW",
+      "support": [
+        0.0,
+        12.566370614359172
+      ],
+      "p_boundary": 0.0010313513149400107,
+      "p_lambda_UV_near_zero": 0.001142032052847302
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p2",
+      "coordinate": "lambda_UV",
+      "support": [
+        -0.2,
+        0.2
+      ],
+      "p_boundary": 0.04561285714285711,
+      "p_lambda_UV_near_zero": 0.05050785714285699
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p05",
+      "coordinate": "lambda_UV",
+      "support": [
+        -0.05,
+        0.05
+      ],
+      "p_boundary": 0.18245142857142843,
+      "p_lambda_UV_near_zero": 0.20203142857142797
+    }
+  ],
+  "UV_width_sensitivity": [
+    {
+      "UV_half_width": 0.02,
+      "p_boundary": 0.4561285714285711,
+      "p_lambda_UV_near_zero": 0.5050785714285699
+    },
+    {
+      "UV_half_width": 0.05,
+      "p_boundary": 0.18245142857142843,
+      "p_lambda_UV_near_zero": 0.20203142857142797
+    },
+    {
+      "UV_half_width": 0.1,
+      "p_boundary": 0.09122571428571422,
+      "p_lambda_UV_near_zero": 0.10101571428571399
+    },
+    {
+      "UV_half_width": 0.2,
+      "p_boundary": 0.04561285714285711,
+      "p_lambda_UV_near_zero": 0.05050785714285699
+    },
+    {
+      "UV_half_width": 1.0,
+      "p_boundary": 0.009122571428571423,
+      "p_lambda_UV_near_zero": 0.010101571428571399
+    }
+  ],
+  "one_at_a_time_input_sensitivity": [
+    {
+      "changed": "mh_GeV",
+      "offset": -0.11,
+      "delta_top_GeV": 1.6278571428571382,
+      "p_boundary": {
+        "flat_Mh_0_700": 0.009302040816326504,
+        "flat_lambda_EW_0_4pi": 0.001067415825044633,
+        "flat_lambda_UV_pm_0p2": 0.047207857142856996,
+        "flat_lambda_UV_pm_0p05": 0.18883142857142798
+      }
+    },
+    {
+      "changed": "mh_GeV",
+      "offset": 0.11,
+      "delta_top_GeV": 1.5178571428571388,
+      "p_boundary": {
+        "flat_Mh_0_700": 0.00867346938775508,
+        "flat_lambda_EW_0_4pi": 0.000995286804835386,
+        "flat_lambda_UV_pm_0p2": 0.04401785714285702,
+        "flat_lambda_UV_pm_0p05": 0.17607142857142807
+      }
+    },
+    {
+      "changed": "mt_GeV",
+      "offset": -0.29,
+      "delta_top_GeV": 1.2828571428571394,
+      "p_boundary": {
+        "flat_Mh_0_700": 0.007330612244897919,
+        "flat_lambda_EW_0_4pi": 0.0008411929889338104,
+        "flat_lambda_UV_pm_0p2": 0.037202857142856934,
+        "flat_lambda_UV_pm_0p05": 0.14881142857142773
+      }
+    },
+    {
+      "changed": "mt_GeV",
+      "offset": 0.29,
+      "delta_top_GeV": 1.8628571428571306,
+      "p_boundary": {
+        "flat_Mh_0_700": 0.010644897959183624,
+        "flat_lambda_EW_0_4pi": 0.0012215096409462021,
+        "flat_lambda_UV_pm_0p2": 0.05402285714285688,
+        "flat_lambda_UV_pm_0p05": 0.21609142857142752
+      }
+    },
+    {
+      "changed": "alpha_s",
+      "offset": -0.0009,
+      "delta_top_GeV": 1.894285714285708,
+      "p_boundary": {
+        "flat_Mh_0_700": 0.010824489795918352,
+        "flat_lambda_EW_0_4pi": 0.0012421179324345626,
+        "flat_lambda_UV_pm_0p2": 0.05493428571428562,
+        "flat_lambda_UV_pm_0p05": 0.2197371428571425
+      }
+    },
+    {
+      "changed": "alpha_s",
+      "offset": 0.0009,
+      "delta_top_GeV": 1.251428571428562,
+      "p_boundary": {
+        "flat_Mh_0_700": 0.007151020408163191,
+        "flat_lambda_EW_0_4pi": 0.00082058469744545,
+        "flat_lambda_UV_pm_0p2": 0.03629142857142819,
+        "flat_lambda_UV_pm_0p05": 0.14516571428571276
+      }
+    },
+    {
+      "changed": "boundary_theory_mh_GeV",
+      "offset": -0.3,
+      "delta_top_GeV": 1.4228571428571328,
+      "p_boundary": {
+        "flat_Mh_0_700": 0.008130612244897922,
+        "flat_lambda_EW_0_4pi": 0.000932993560109216,
+        "flat_lambda_UV_pm_0p2": 0.04126285714285695,
+        "flat_lambda_UV_pm_0p05": 0.1650514285714278
+      }
+    },
+    {
+      "changed": "boundary_theory_mh_GeV",
+      "offset": 0.3,
+      "delta_top_GeV": 1.7228571428571442,
+      "p_boundary": {
+        "flat_Mh_0_700": 0.009844897959183701,
+        "flat_lambda_EW_0_4pi": 0.0011297090697708076,
+        "flat_lambda_UV_pm_0p2": 0.04996285714285728,
+        "flat_lambda_UV_pm_0p05": 0.19985142857142912
+      }
+    }
+  ],
+  "look_elsewhere_sensitivity_not_calibrated_global_p": [
+    {
+      "prior": "flat_Mh_0_700",
+      "illustrative_independent_trials": 1,
+      "p_at_least_one_if_iid": 0.008987755102040812,
+      "union_bound_if_each_marginal_p_equal": 0.008987755102040812
+    },
+    {
+      "prior": "flat_Mh_0_700",
+      "illustrative_independent_trials": 3,
+      "p_at_least_one_if_iid": 0.026721652109335924,
+      "union_bound_if_each_marginal_p_equal": 0.026963265306122433
+    },
+    {
+      "prior": "flat_Mh_0_700",
+      "illustrative_independent_trials": 10,
+      "p_at_least_one_if_iid": 0.08632823040718428,
+      "union_bound_if_each_marginal_p_equal": 0.08987755102040812
+    },
+    {
+      "prior": "flat_Mh_0_700",
+      "illustrative_independent_trials": 30,
+      "p_at_least_one_if_iid": 0.2372703677331634,
+      "union_bound_if_each_marginal_p_equal": 0.26963265306122436
+    },
+    {
+      "prior": "flat_lambda_EW_0_4pi",
+      "illustrative_independent_trials": 1,
+      "p_at_least_one_if_iid": 0.0010313513149400107,
+      "union_bound_if_each_marginal_p_equal": 0.0010313513149400107
+    },
+    {
+      "prior": "flat_lambda_EW_0_4pi",
+      "illustrative_independent_trials": 3,
+      "p_at_least_one_if_iid": 0.0030908639852490214,
+      "union_bound_if_each_marginal_p_equal": 0.0030940539448200324
+    },
+    {
+      "prior": "flat_lambda_EW_0_4pi",
+      "illustrative_independent_trials": 10,
+      "p_at_least_one_if_iid": 0.010265778707043982,
+      "union_bound_if_each_marginal_p_equal": 0.010313513149400107
+    },
+    {
+      "prior": "flat_lambda_EW_0_4pi",
+      "illustrative_independent_trials": 30,
+      "p_at_least_one_if_iid": 0.030482259355281857,
+      "union_bound_if_each_marginal_p_equal": 0.03094053944820032
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p2",
+      "illustrative_independent_trials": 1,
+      "p_at_least_one_if_iid": 0.04561285714285711,
+      "union_bound_if_each_marginal_p_equal": 0.04561285714285711
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p2",
+      "illustrative_independent_trials": 3,
+      "p_at_least_one_if_iid": 0.13069187226086895,
+      "union_bound_if_each_marginal_p_equal": 0.1368385714285713
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p2",
+      "illustrative_independent_trials": 10,
+      "p_at_least_one_if_iid": 0.37303138617478326,
+      "union_bound_if_each_marginal_p_equal": 0.4561285714285711
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p2",
+      "illustrative_independent_trials": 30,
+      "p_at_least_one_if_iid": 0.753545131593592,
+      "union_bound_if_each_marginal_p_equal": 1.0
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p05",
+      "illustrative_independent_trials": 1,
+      "p_at_least_one_if_iid": 0.18245142857142843,
+      "union_bound_if_each_marginal_p_equal": 0.18245142857142843
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p05",
+      "illustrative_independent_trials": 3,
+      "p_at_least_one_if_iid": 0.4535622530711301,
+      "union_bound_if_each_marginal_p_equal": 0.5473542857142852
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p05",
+      "illustrative_independent_trials": 10,
+      "p_at_least_one_if_iid": 0.8666062014005675,
+      "union_bound_if_each_marginal_p_equal": 1.0
+    },
+    {
+      "prior": "flat_lambda_UV_pm_0p05",
+      "illustrative_independent_trials": 30,
+      "p_at_least_one_if_iid": 0.9976264033527973,
+      "union_bound_if_each_marginal_p_equal": 1.0
+    }
+  ],
+  "scalar_triviality_diagnostic": {
+    "model": "large-lambda scalar-only one-loop toy; not a full SM bound",
+    "v_GeV": 246.21971,
+    "M_Pl_GeV": 1.2209e+19,
+    "lambda_EW_pole_at_Planck": 0.169590001263277,
+    "mh_pole_at_Planck_GeV": 143.39629651852567,
+    "pole_scale_for_mh_700_GeV": 879.1267019490562
+  }
+}

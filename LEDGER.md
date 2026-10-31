@@ -111,3 +111,31 @@ F2, the branch's DATUM.md last-digit agreement claim overstates y_t agreement
 table with the recorded JSON. These qualify validation and reporting, not the reproduced
 central λ result. No fixes or merges performed by this critic. Prior dependence and the
 broader breaker brief remain open.
+
+### P1 / S1 / C0 breaker follow-up, 2026-10-31 — prior-sweep (DERIVED + STIPULATED + INFERENCE)
+
+Issue #5, base `83e737c60e97563fb63078794e06cb662f8bea2b`.
+[`02-how-surprising/BREAK.md`](02-how-surprising/BREAK.md),
+[`surprise.py`](02-how-surprising/surprise.py), and
+[`surprise.json`](02-how-surprising/surprise.json) supply Q0's missing prior table.
+With the repo's RECALL inputs, eq. 64 gives a potential-boundary distance of
+1.572857 top-GeV. In the stated conditional local-linear model, p(boundary band)
+is 0.008987755 for flat M_h in (0,700), 0.001031351 for flat lambda(M_t) in
+(0,4 pi), 0.045612857 for flat lambda(M_Pl) in (-0.2,0.2), and 0.182451429 for
+flat lambda(M_Pl) in (-0.05,0.05). All priors condition on M_t and alpha_s.
+The geometric datum survives; the number expressing its surprise depends on
+the prior. The separately reported UV-zero event is not the potential-boundary
+event. These are not experimental p-values or a joint three-edge probability.
+
+P1's "not yet stated" status is superseded by this dated computation. S1's
+p>0.1 removal criterion is met **conditional on accepting the small-quartic UV
+prior** (STIPULATED). Breaker's recommendation: withdraw a compulsory quartic
+explanation on that assumption; no claim that the prior is uniquely correct,
+or that m^2 and cosmological-constant problems have disappeared. S1's original
+record is retained for the steward's decision. C0 remains live, but its own
+retrospective freedom to choose priors is explicitly attacked in its file.
+Only C0 had a candidate file at the base SHA; C1-C4 historical predictions were
+not assessed. Look-elsewhere numbers are sensitivities, not a calibrated global p.
+Validation: `python3 02-how-surprising/surprise.py --check` passes interval tests,
+independent grid integration, and comparison of every recorded output field.
+
