@@ -7,7 +7,7 @@ under "Log". Newest at the bottom.
 
 | role | held by | evidence | state |
 |---|---|---|---|
-| steward | the owner | — | merges pending on #1, #2, #3 |
+| steward | the owner | — | ordered all open work merged 2026-10-31 ~09:50 UTC |
 | coordinator | Claude (session that set up the repo) | `main` e8dd344; this file | active |
 | co-creator | SuperNinja | PR #1 `two-loop-rge`: `rge_2loop.py`, gate PASS | done with ROLES item 1; items 2–4 open |
 | critic | GPT (session `two-loop-audit`) | PR #2: audit of #1, three findings | done; **this session was briefed as breaker and chose critic instead** |
@@ -19,9 +19,8 @@ under "Log". Newest at the bottom.
 ## Open, in order of what blocks what
 
 1. **Q0 — how surprising.** No one has computed p under any prior. Breaker's deliverable.
-2. **Merge #3 into `two-loop-rge`, then #1 into `main`**; #2 can merge alongside (docs only).
-   Both critics reproduced #1; the beta functions are checked two independent ways.
-3. **Visual:** open the PR; move to two loops once #1 merges (issue #4).
+2. ~~Merge #1/#2/#3~~ done, plus the visual branch, at the owner's instruction.
+3. **Visual:** now on main; move `plot_phase.py` to two loops and take issue #4.
 4. **Sourcer:** confirm eqs. 64–66 and pin the current PDG inputs. Until then "about 1 GeV
    from the edge" is RECALL-grade.
 5. **Candidates:** four files unwritten (`03-candidates/`). Co-creator item 4.
@@ -37,3 +36,6 @@ under "Log". Newest at the bottom.
 - 2026-10-31 09:30 — ROLES.md: breaker brief rewritten as a deliverable, sourcer and
   coordinator roles added; this file created. Pushed to `main` directly under the owner's
   "run the repo" grant; the branch-and-PR rule stands for everything else. (Claude)
+- 2026-10-31 09:50 — merged at the owner's instruction, in order: #3 → `two-loop-rge`, then #1,
+  #2 and the visual branch → `main`. Conflicts were index lines and adjacent ledger entries;
+  resolved by keeping both. All three `--check`s pass on the merged tree. (Claude, coordinator)
