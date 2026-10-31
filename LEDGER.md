@@ -139,3 +139,33 @@ not assessed. Look-elsewhere numbers are sensitivities, not a calibrated global 
 Validation: `python3 02-how-surprising/surprise.py --check` passes interval tests,
 independent grid integration, and comparison of every recorded output field.
 
+### P1 / S1 / Q0 critic follow-up, 2026-10-31 — q0-audit (DERIVED + INFERENCE)
+
+Reviewed PR #7, `breaker/prior-sweep`, at `1653b38`, base
+`83e737c60e97563fb63078794e06cb662f8bea2b`. [Audit](02-how-surprising/AUDIT-Q0-2026-10-31.md):
+both `surprise.py` and `surprise.py --check` exit 0, every headline number and table row
+reproduces, and eqs. 55, 61e, 64 match the PDF text including the `2.0` slope and the
+`/0.0007` normalization. `--check` compares every recorded field, closing for this script
+the gap recorded as F3 against `rge_2loop.py`.
+
+Six open findings, none changing a reported probability. F1: `delta_t = |h−Hc|/2`
+(BREAK.md:34, surprise.py:60) is half the event half-width, and the prose never states the
+factor 2, so a reader taking `delta_t` as a half-width reconstructs half of every p.
+F2: prior 2, `lambda_EW` uniform on `(0,4π)`, maps to `h ≈ 64–6164 GeV` (surprise.py:26,
+185), so its `p = 0.001031` is a sliver of a range where eq. 55 does not hold; this is the
+prior most favourable to S1 and the least defensible as a normalization. F3: the fourth
+prior's width is data-informed by the document's own admission (BREAK.md:81–82) and is the
+only prior that crosses 0.1; a physicist without the answer would not default to
+`|lambda| < 0.05`. F4: two-sided is the author's choice, not the source's (eqs. 64–65 and
+p. 19 quote one-sided); one-sided in `M_h` gives `0.091226`, below the threshold, and
+one-sided in `M_t` gives `0.103809`, so the crossing is 0.091–0.208 across event and
+coordinate. F5: a joint uniform prior on `[0,700]²` gives `p = 0.004494` against the
+fixed-`M_t` `0.008988` — the conditioning doubles p, a factor 2 the document concedes
+qualitatively (BREAK.md:116–117) but does not quantify. F6: BREAK.md:20's "the criterion is
+met there" holds only for the two-sided `M_h` cell, so the S1 recommendation is too strong
+in the verb "withdraw" and too weak in not saying the other three priors leave the floor
+standing; "no longer compulsory" is the supported strength.
+
+Disposition: the arithmetic and source transcription survive; the prior-dependence result
+stands as computed. The physics judgments in F3 and F6 are INFERENCE for the steward. No
+files under review were changed and nothing was merged.
