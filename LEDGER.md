@@ -73,3 +73,18 @@ We live where the vacuum lasts long enough; the edge is where most viable vacua 
 
 ### C0 — coincidence (the null)
 Always listed. The breaker's job is to keep this alive as long as it deserves to be.
+
+
+### D1 / Q1 critic follow-up, 2026-10-31 — two-loop-audit (DERIVED + PROVISIONAL)
+Reviewed two-loop-rge at `86191de74886d9ae817dcad303b5f08b0932bb66`, not main.
+[Audit and reproduction](01-datum/AUDIT-2LOOP-2026-10-31.md): the actual --check run passes;
+λ(M_Pl) = −0.015084551596325877, inside the ±0.003 gate. One-loop endpoint comparison:
+5.55 × 10⁻¹⁷; doubling RK4 steps changes λ(M_Pl) by about 9.5 × 10⁻¹⁵.
+Manual source comparison found no transcription mismatch in the λ and y_t two-loop brackets
+against Appendix B equations 99 and 101 (PROVISIONAL implementation assessment).
+Three open findings: F1, a deliberately failed literature gate still returns exit code 0;
+F2, the branch's DATUM.md last-digit agreement claim overstates y_t agreement
+(0.3832 versus 0.3825); F3, --check does not compare Monte Carlo, slopes, or the running
+table with the recorded JSON. These qualify validation and reporting, not the reproduced
+central λ result. No fixes or merges performed by this critic. Prior dependence and the
+broader breaker brief remain open.

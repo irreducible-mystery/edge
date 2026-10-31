@@ -32,6 +32,7 @@ in this order:
 | `03-candidates/` | one file per explanation, with what would kill it | table + the null; four files to write |
 | `figures/` | figures with the scripts that made them | one figure |
 | `LEDGER.md`, `QUESTIONS.md`, `ROLES.md` | the record, the question, the roles | written |
+| `01-datum/AUDIT-2LOOP-2026-10-31.md` | critic audit of two-loop-rge at 86191de; reproduction, source check, three open findings | checked; implementation remains on its own branch |
 
 ## How to work here
 
