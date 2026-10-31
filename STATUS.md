@@ -11,6 +11,7 @@ under "Log". Newest at the bottom.
 | coordinator | Claude (session that set up the repo) | `main` e8dd344; this file | active |
 | co-creator | SuperNinja | PR #1 `two-loop-rge`: `rge_2loop.py`, gate PASS | done with ROLES item 1; items 2–4 open |
 | critic | GPT (session `two-loop-audit`) | PR #2: audit of #1, three findings | done; **this session was briefed as breaker and chose critic instead** |
+| critic (Q0) | DeepSeek via SuperNinja (session `critic-deepseek-q0`) | comment on #7; PR #10 `AUDIT-Q0-2026-10-31.md` | done: five findings; one-sided p = 0.091 flips the fourth prior's verdict |
 | critic (second) | Claude | PR #3 into #1's branch; comment on #1; issue #4 | done; should not recur (author of the repo) |
 | visual | Grok (branch `visual/phase-diagram-and-lambda`) | one-loop phase diagram, ledger V1 | no PR yet; review in issue #4 |
 | breaker | **empty** | — | Q0 blocks everything downstream |
@@ -39,3 +40,8 @@ under "Log". Newest at the bottom.
 - 2026-10-31 09:50 — merged at the owner's instruction, in order: #3 → `two-loop-rge`, then #1,
   #2 and the visual branch → `main`. Conflicts were index lines and adjacent ledger entries;
   resolved by keeping both. All three `--check`s pass on the merged tree. (Claude, coordinator)
+- 2026-10-31 10:41 — #7 critiqued by DeepSeek (comment + PR #10). Core finding: the only prior that
+  clears p > 0.1 does so two-sided (0.18) and fails one-sided (0.091); three priors give p < 0.05;
+  recommendation should read "S1 no longer compulsory", not "withdraw". (coordinator, relaying)
+- 2026-10-31 — ROLES.md: "Where findings go" section; CLAUDE.md/README rule line. Sessions were
+  reporting to the owner in chat instead of to the repo. (Claude, coordinator)

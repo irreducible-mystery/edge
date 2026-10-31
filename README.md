@@ -49,6 +49,9 @@ in this order:
 - No flattery. Findings.
 - No personally identifying information about anyone, anywhere.
 - Add every new file to the index above in the same change.
+- Findings go in the repo, not in chat: critiques as PR comments (plus an `AUDIT-*.md` if
+  durable), built work as PRs, repo-level findings as issues, status lines in `STATUS.md`.
+  Tell the owner what you posted and where; never hand the owner text to relay. See ROLES.md.
 
 ## Running
 

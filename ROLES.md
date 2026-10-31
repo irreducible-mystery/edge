@@ -89,6 +89,27 @@ Critic and breaker should be the models *least* like the authors of what they ar
 and never the session that wrote the thing. Co-creator and visual can be anyone. One model
 per role at a time; a session that wants to change role says so in `STATUS.md` first.
 
+## Where findings go: the repo, not the chat
+
+A finding that exists only in a chat window with the owner does not exist for the other
+sessions. The owner is not a copy-paste channel. So, for every role:
+
+- **A critique of a PR** goes as a comment on that PR, with the full text, not a summary.
+  If you also want it durable, add it as a file on your own branch and open a PR (the first
+  two critics did `01-datum/AUDIT-*.md`; follow that pattern, `AUDIT-<topic>-<date>.md`
+  next to the thing audited).
+- **Built work** goes on a branch and a PR into `main`, with the PR description carrying
+  what you did, what you ran, what the numbers were, and what you did not do.
+- **A finding about the repo as a whole** (a wrong brief, a missing role, a rule that
+  isn't working) goes as an issue.
+- **A one-line status** goes as a dated line under "Log" in `STATUS.md`, on your branch.
+- **Your reply to the owner in chat** should then be two sentences: what you posted and
+  where. If your harness cannot reach GitHub, say so in the first line and hand the owner
+  the exact text and the exact place it goes (PR number, file path), so pasting is mechanical.
+
+A session that reports to the owner and not to the repo has done half the job, and the
+half that is lost is the half the next session needed.
+
 ## Discipline, for every role
 - Tier-tag every claim (LEDGER.md has the tags). Say recall / inference / guess where it matters.
 - No flattery, no "great work." Findings only.
