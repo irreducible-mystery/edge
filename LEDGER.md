@@ -27,11 +27,12 @@ Three-loop literature: λ(M_Pl) = −0.0143 at 2013 central inputs, crossing zer
 reproduces the shape and misses the numbers by ~2× (see `01-datum/DATUM.md`). Standing:
 the fact is STANDARD; our own reproduction is DERIVED at one loop only.
 
-### D2 — the measured top mass is near the stability edge (STANDARD; see dated correction)
-The original comparison used Eq. 66's M_t < 171.53 ± 0.42 GeV against the PDG 2024
-direct/reconstructed average M_t = 172.57 ± 0.29 GeV. The 2013 paper quoted 2.8σ with
-M_t = 173.34; its Eq. 66 central value is not the Eq. 64 result at the paper's stated
-M_h = 125.15 GeV, as recorded below.
+### D2 — the measured top mass is about 1 GeV above the stability edge (STANDARD; see dated correction)
+Edge: M_t < 171.53 ± 0.42 GeV (three loop, 2013). Measured in the PDG 2024 direct/
+reconstructed average: 172.57 ± 0.29 GeV (STANDARD). The original comparison was
+described as ≈ 2σ from absolute stability. The 2013 paper quoted 2.8σ with M_t = 173.34;
+the measured value has moved toward the edge since. The matched-input comparison is
+corrected below.
 
 ### D2 correction, 2026-10-31 — Eq. 66 is not the Eq. 64 edge at the stated M_h (STANDARD + DERIVED)
 The 2024 values in the runs are confirmed to the PDG 2024 edition; the latest PDG 2026
@@ -77,8 +78,10 @@ rendered PDF, not from memory) gives λ(M_Pl) = −0.0151 at (173.34, 125.15, 0.
 the target −0.0143 ± 0.003: **PASS**, miss −0.0008. The slopes of eq. 61e (−0.0066, +0.0029,
 +0.0018) come out −0.0065, +0.0028, +0.0019; g₁, g₂, g₃, y_t at M_Pl match eq. 61a–d to the
 last digit or within one. With 2024-era inputs λ(M_Pl) = −0.0110 ± 0.0030 (Monte Carlo).
-Running-coupling M_t edge: 170.96 GeV (2013 M_h, α_s). Q1's rule stands: quote the
-literature for the edge; this run can now be quoted for λ(M_Pl), its
+Running-coupling M_t edge: 170.96 GeV (2013 M_h, α_s), 0.57 GeV below the literature's
+171.53 ± 0.42; the gap is part missing three-loop terms, part a difference of definition
+(sign of running λ(μ) vs. sign of the effective potential λ_eff, see DATUM.md). Q1's rule
+stands: quote the literature for the edge; this run can now be quoted for λ(M_Pl), its
 slopes, and the shape. D1's standing moves from "DERIVED at one loop only" to "DERIVED at
 two loops, within 0.001 of the three-loop literature". Not yet attacked by a breaker.
 
@@ -92,8 +95,9 @@ still applies; see `01-datum/DATUM.md`.
 Computed 2026-10-31 by `01-datum/plot_phase.py` (Visual role). Absolute stability boundary
 (where λ first reaches zero below M_Pl) at M_h = 125.2 GeV lies at M_t ≈ 168.1 GeV, matching
 `results.json`. The measured point (125.20 ± 0.11, 172.57 ± 0.29) GeV sits in the metastable
-region, ~4.5 GeV above the one-loop boundary (and ~1.6 GeV above the Eq. 64 fit at matched
-PDG 2024 M_h and α_s). Regions colored: stable (λ > 0 always), metastable (crosses but λ_min > −0.05),
+region, ~4.5 GeV above the one-loop boundary (and ~1 GeV above the three-loop literature
+boundary, the original estimate corrected below). Regions colored: stable (λ > 0 always),
+metastable (crosses but λ_min > −0.05),
 unstable (λ_min < −0.05). The metastable/unstable split is a rough proxy for vacuum lifetime;
 a proper bounce-action calculation is not yet in the repo. The three-loop literature band for
 λ(μ) remains pending the co-creator's higher-loop implementation. Figure: `figures/phase_diagram.png`

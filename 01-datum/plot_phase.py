@@ -6,8 +6,8 @@ and a rough metastable/unstable boundary (min lambda < -0.05, approximating
 short vacuum lifetime). Marks the measured point with its 1-sigma error ellipse.
 Writes ../figures/phase_diagram.png.
 
-Tier: DERIVED (one loop). The three-loop literature boundary is higher
-(stability edge at M_t ~171.5 GeV for M_h=125); see DATUM.md.
+Tier: DERIVED (one loop). At matched PDG 2024 inputs, the three-loop Eq. 64 fit
+places the boundary near M_t=171.0 GeV; see DATUM.md.
 """
 import math
 import numpy as np
@@ -86,7 +86,7 @@ ax.set_title("One-loop SM vacuum phase diagram in the $(M_h, M_t)$ plane")
 ax.set_xlim(120, 140)
 ax.set_ylim(160, 180)
 ax.legend(frameon=False, fontsize=8, loc="upper left")
-ax.text(121, 161, "DERIVED at one loop. 3-loop literature moves the\nstability boundary up by ~3.4 GeV in $M_t$.\nMetastable/unstable split is approximate ($\\lambda_{\\rm min}<-0.05$).",
+ax.text(121, 161, "DERIVED at one loop. Matched Eq. 64 fit moves the\nboundary up by ~2.9 GeV in $M_t$ (PDG 2024 inputs).\nEq. 66 prints 171.53 at unstated $M_h$.\nMetastable/unstable split is approximate ($\\lambda_{\\rm min}<-0.05$).",
         fontsize=7, color="#333", va="bottom")
 fig.tight_layout()
 fig.savefig("../figures/phase_diagram.png")
