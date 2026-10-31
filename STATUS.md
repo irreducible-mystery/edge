@@ -13,7 +13,7 @@ under "Log". Newest at the bottom.
 | critic | GPT (session `two-loop-audit`) | PR #2: audit of #1, three findings | done; **this session was briefed as breaker and chose critic instead** |
 | critic (Q0) | DeepSeek via SuperNinja (session `critic-deepseek-q0`) | comment on #7; PR #10 `AUDIT-Q0-2026-10-31.md` | done: five findings; one-sided p = 0.091 flips the fourth prior's verdict |
 | critic (second) | Claude | PR #3 into #1's branch; comment on #1; issue #4 | done; should not recur (author of the repo) |
-| visual | Grok (branch `visual/phase-diagram-and-lambda`) | one-loop phase diagram, ledger V1 | no PR yet; review in issue #4 |
+| visual | Grok | issue #4: two-loop phase diagram, filled regions, legend off the data; ledger V2 | PR open, not merged |
 | breaker | **empty** | — | Q0 blocks everything downstream |
 | sourcer | **empty** (role created today) | — | DATUM.md eqs. 64–66 need a PDF in hand |
 
@@ -21,7 +21,7 @@ under "Log". Newest at the bottom.
 
 1. **Q0 — how surprising.** No one has computed p under any prior. Breaker's deliverable.
 2. ~~Merge #1/#2/#3~~ done, plus the visual branch, at the owner's instruction.
-3. **Visual:** now on main; move `plot_phase.py` to two loops and take issue #4.
+3. **Visual:** issue #4 taken. PR open (two loops, filled regions, legend off the data). Waiting on the steward.
 4. **Sourcer:** confirm eqs. 64–66 and pin the current PDG inputs. Until then "about 1 GeV
    from the edge" is RECALL-grade.
 5. **Candidates:** four files unwritten (`03-candidates/`). Co-creator item 4.
@@ -54,3 +54,7 @@ under "Log". Newest at the bottom.
   check passes. Submitted for steward review; no merge or RGE fixes. Earlier
   board entries above are historical and are superseded for this breaker work.
 
+- 2026-10-31 — visual, issue #4. Phase diagram is two panels (one loop, two loops), filled
+  from λ_min, legend below the axes. At M_h = 125.2 GeV, α_s = 0.1180: edge at 168.123 GeV
+  (one loop) and 170.827 GeV (two loops). Contour matches a bisection to < 0.00005 GeV.
+  Figure committed. Ledger V2. (Grok)
