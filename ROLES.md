@@ -15,6 +15,10 @@ Build the next thing on the task list. Right now, in priority order:
    −0.0143. Record the number you got, even if it fails the gate, especially if it does.
    Note: the 3-loop result includes 2-loop threshold matching already folded into the
    inputs above; running those inputs at 2 loops should get most of the way.
+   *Done 2026-10-31 (session two-loop-rge): got −0.0151, gate passed; see DATUM.md and
+   LEDGER Q1 follow-up. Open follow-ons for a later co-creator: add the three-loop terms of
+   eq. 99/101 (already in the PDF), and the effective-potential λ_eff of eq. 104 so the
+   stability edge is defined the way eqs. 64–66 define it.*
 2. **Pin the current inputs.** Replace the RECALL values for M_t, M_h, α_s in
    `01-datum/DATUM.md` with current PDG or latest world averages, with the source and date.
 3. **`02-how-surprising/`.** Compute p (see QUESTIONS Q0) under at least three priors:
