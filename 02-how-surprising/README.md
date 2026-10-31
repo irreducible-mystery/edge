@@ -16,3 +16,23 @@ Priors to include at minimum:
 
 The three-loop map from (M_h, M_t) to the stability boundary is needed for this; until
 `rge_2loop.py` exists, use the literature's linear formula (DATUM.md, eq. 64/66) and say so.
+
+## Breaker result, 2026-10-31 — prior-sweep
+
+The brief above is retained as written. The computation is now in
+[`surprise.py`](surprise.py), its complete output in [`surprise.json`](surprise.json),
+and the argument and limitations in [`BREAK.md`](BREAK.md).
+
+**DERIVED in the stated local model:** delta_t = 1.572857 GeV for the repo's
+inputs. The four conditional prior probabilities are 0.008987755, 0.001031351,
+0.045612857, and 0.182451429. All priors condition on M_t and alpha_s. The
+small-quartic UV prior crosses the issue's 0.1 threshold; whether it is accepted
+is the explicit remaining assumption. The UV-zero event is reported separately.
+The 700 GeV support is preserved as a prior choice, not justified as a
+Planck-valid triviality bound; the script includes a scalar-only diagnostic.
+
+```sh
+python3 02-how-surprising/surprise.py
+python3 02-how-surprising/surprise.py --check
+```
+

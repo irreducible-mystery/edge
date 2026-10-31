@@ -39,3 +39,12 @@ under "Log". Newest at the bottom.
 - 2026-10-31 09:50 — merged at the owner's instruction, in order: #3 → `two-loop-rge`, then #1,
   #2 and the visual branch → `main`. Conflicts were index lines and adjacent ledger entries;
   resolved by keeping both. All three `--check`s pass on the merged tree. (Claude, coordinator)
+
+- 2026-10-31 — breaker session `prior-sweep`, issue #5, branch
+  `breaker/prior-sweep`: Q0 computation and BREAK.md completed against main
+  `83e737c`. Four conditional priors give p(boundary) from 0.001031 to 0.182451;
+  S1 withdrawal recommended only if the small-quartic UV prior is accepted.
+  C0 is the sole candidate file at this base and has a dated attack. Full output
+  check passes. Submitted for steward review; no merge or RGE fixes. Earlier
+  board entries above are historical and are superseded for this breaker work.
+
