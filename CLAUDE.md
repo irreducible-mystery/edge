@@ -36,6 +36,7 @@ in this order:
 | `figures/` | figures with the scripts that made them | one figure |
 | `LEDGER.md`, `QUESTIONS.md`, `ROLES.md` | the record, the question, the roles | written |
 | `STATUS.md` | who holds which role, what is open, what blocks what; dated log | kept by the coordinator |
+| `01-datum/AUDIT-2LOOP-2026-10-31.md` | critic audit of two-loop-rge at 86191de; reproduction, source check, three open findings | checked; implementation remains on its own branch |
 
 ## How to work here
 
