@@ -30,15 +30,28 @@ Is every tag earned? A critic writes findings, not praise, and a finding names t
 A critic who finds nothing says "checked, nothing found" and lists what was checked.
 
 ## Breaker
-Try to make the datum go away. Specifically:
-- Find a defensible prior under which the near-criticality is unremarkable (p > 0.1).
-- Find an error in the input values, the beta functions, or the RK4 that changes the shape.
-- Argue that "three edges" is numerology of the Dirac-large-numbers kind: three unrelated
-  smallnesses that look like a pattern because someone put them in one table.
-- Attack any candidate in `03-candidates/` by showing its "prediction" was a postdiction
-  with free parameters.
-The breaker reports what survived as carefully as what broke. A breaker who breaks nothing
-says so; that is a result.
+**A breaker is not a critic.** A critic checks that the work was done right (does the code
+match the paper, does the number reproduce). A breaker checks whether the work *matters*:
+whether the datum would survive if the repo had never been written. The first session
+handed this brief did critic work instead, carefully and well, and left the breaker's
+question untouched. So, concretely, the breaker's deliverable is one pull request containing:
+
+1. **`02-how-surprising/surprise.py`** and its output: p = P(landing as close to the stability
+   boundary as we did) under at least three priors you choose and state, including the one
+   that makes the coincidence look weakest. Use the literature's linear boundary (DATUM.md
+   eq. 64) or `rge_2loop.py` once it merges. Report all of them. The repo's floor (LEDGER S1)
+   comes out if you can get p > 0.1 under a prior a physicist would not laugh at.
+2. **`02-how-surprising/BREAK.md`**: your best case that there is nothing to explain. The
+   Dirac-large-numbers argument (three unrelated smallnesses in one table), the
+   look-elsewhere effect (how many other "near-critical" coincidences could have been
+   claimed in the Standard Model and were not), the "the top mass moved toward the edge" line
+   in DATUM.md read as noise, and anything else. Written to persuade, then scored by you
+   against its own weaknesses.
+3. One attack on each candidate in `03-candidates/` that has a file: show the "prediction"
+   was a postdiction with free parameters, or show it wasn't.
+
+Do not check the beta functions; two critics already did. Do not fix anything. If the
+datum survives, say exactly what survived and under which priors; that is the result.
 
 ## Visual
 Make the figure that a reader needs in order to see the datum without reading the table:
@@ -47,9 +60,30 @@ the "phase diagram" in the (M_h, M_t) plane with stable / metastable / unstable 
 the measured point with its error ellipse (this is Fig. 1 of Buttazzo et al.; ours should
 be computed here, not copied). Figures go in `figures/` with the script that made them.
 
+## Sourcer
+Every RECALL tag in the repo is a debt. The sourcer pays them: open the actual paper (PDF in
+hand, not a text fetch), confirm or correct the value, and flip the tag to STANDARD with the
+page/equation, or to DEAD with what the paper really says. First targets: DATUM.md eqs.
+64–66 (is the 2.0 slope right, and at which M_h is 171.53 quoted?), the PDG-2024-era inputs
+(M_t, M_h, α_s with the PDG edition), the Froggatt–Nielsen 1996 Higgs-mass prediction and
+its error bar, the Shaposhnikov–Wetterich 2010 number, Weinberg 1987. One PR, one table:
+claim, source, page, verdict.
+
 ## Steward (the owner)
 Decides what merges, resolves competing designs, and can pull the floor (LEDGER S1) if the
 breaker earns it. Sessions do not merge their own work.
+
+## Coordinator
+Keeps `STATUS.md` current (who holds which role, what is open, what blocks what), writes
+and sharpens briefs, gives merge-readiness reads for the steward, and builds whatever no one
+else is building. Does **not** review other sessions' work except at the steward's request:
+a repo's author is the wrong critic for it. Currently held by the session that set up the
+repo (Claude).
+
+## Who should hold which role
+Critic and breaker should be the models *least* like the authors of what they are checking,
+and never the session that wrote the thing. Co-creator and visual can be anyone. One model
+per role at a time; a session that wants to change role says so in `STATUS.md` first.
 
 ## Discipline, for every role
 - Tier-tag every claim (LEDGER.md has the tags). Say recall / inference / guess where it matters.

@@ -32,6 +32,7 @@ in this order:
 | `03-candidates/` | one file per explanation, with what would kill it | table + the null; four files to write |
 | `figures/` | figures with the scripts that made them | one figure |
 | `LEDGER.md`, `QUESTIONS.md`, `ROLES.md` | the record, the question, the roles | written |
+| `STATUS.md` | who holds which role, what is open, what blocks what; dated log | kept by the coordinator |
 
 ## How to work here
 
